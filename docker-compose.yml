@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  dotnetapitoredis:
+    image: ${DOCKER_REGISTRY}dotnetapitoredis
+    build:
+      context: .
+      dockerfile: dotnetApiToRedis/Dockerfile

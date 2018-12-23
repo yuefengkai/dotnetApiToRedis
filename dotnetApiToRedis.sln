@@ -1,6 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dotnetApiToRedis", "dotnetApiToRedis\dotnetApiToRedis.csproj", "{0D333EE5-4A7E-4EF8-B0BE-726DFDB24A9B}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{4E9CAB9D-3B97-453E-804E-1A54A50C0E11}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -12,5 +15,9 @@ Global
 		{0D333EE5-4A7E-4EF8-B0BE-726DFDB24A9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0D333EE5-4A7E-4EF8-B0BE-726DFDB24A9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0D333EE5-4A7E-4EF8-B0BE-726DFDB24A9B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E9CAB9D-3B97-453E-804E-1A54A50C0E11}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E9CAB9D-3B97-453E-804E-1A54A50C0E11}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E9CAB9D-3B97-453E-804E-1A54A50C0E11}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E9CAB9D-3B97-453E-804E-1A54A50C0E11}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

@@ -21,7 +21,11 @@ namespace dotnetApiToRedis
         {
             services.AddSingleton(new RedisDB());
             
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            services.AddMvc().AddJsonOptions(opt =>
+            {
+                opt.SerializerSettings.DateFormatString = "yyyy-MM-dd HH:mm:ss";
+            })
+            .SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

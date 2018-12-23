@@ -20,7 +20,7 @@ namespace dotnetApiToRedis.Data
                     return _redisClient;
                 }
 
-                var redisManger = new RedisManagerPool("db.gzz.cn:6379"); //Redis的连接字符串
+                var redisManger = new RedisManagerPool( "193.112.45.13:6379" ); //Redis的连接字符串
                 _redisClient = redisManger.GetClient(); //获取一个Redis Client
 
                 return _redisClient;
@@ -58,7 +58,10 @@ namespace dotnetApiToRedis.Data
              var saveTodo = redisTodos.GetById(chatMessage.Id);               //根据Id查询        查
             
             "Saved Todo: {0}".Print(saveTodo.Dump());
- 
+
+            saveTodo.Content = chatMessage.Content;
+            saveTodo.ChatRoom = chatMessage.ChatRoom;
+            saveTodo.DateTime = chatMessage.DateTime;
             saveTodo.AddTime = chatMessage.AddTime;   
             saveTodo.Status = chatMessage.Status;                                         //改
             return redisTodos.Store(saveTodo);

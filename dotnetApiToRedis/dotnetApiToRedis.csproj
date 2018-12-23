@@ -2,6 +2,7 @@
 
     <PropertyGroup>
         <TargetFramework>netcoreapp2.1</TargetFramework>
+        <DockerComposeProjectPath>../docker-compose.dcproj</DockerComposeProjectPath>
     </PropertyGroup>
 
     <ItemGroup>
@@ -10,12 +11,20 @@
 
     <ItemGroup>
         <PackageReference Include="Microsoft.AspNetCore.App" />
-        <PackageReference Include="Newtonsoft.Json">
-          <Version>12.0.1</Version>
+        <PackageReference Include="Newtonsoft.Json" Version="12.0.1">
         </PackageReference>
-        <PackageReference Include="ServiceStack.Redis">
-          <Version>5.4.0</Version>
+        <PackageReference Include="ServiceStack.Redis" Version="5.4.0">
         </PackageReference>
     </ItemGroup>
 
+    <ItemGroup>
+      <None Remove="charts\dotnetApiToRedis\.helmignore" />
+      <None Remove="charts\dotnetApiToRedis\Chart.yaml" />
+      <None Remove="charts\dotnetApiToRedis\values.yaml" />
+      <None Remove="charts\dotnetApiToRedis\templates\NOTES.txt" />
+      <None Remove="charts\dotnetApiToRedis\templates\_helpers.tpl" />
+      <None Remove="charts\dotnetApiToRedis\templates\deployment.yaml" />
+      <None Remove="charts\dotnetApiToRedis\templates\ingress.yaml" />
+      <None Remove="charts\dotnetApiToRedis\templates\service.yaml" />
+    </ItemGroup>
 </Project>
