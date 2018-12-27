@@ -4,7 +4,7 @@ echo '**************************************************************************
 docker-compose build
 echo '*************docker 编译成功*************'
 
-docker login -u=yuefengkai -p 19901230 hub.tencentyun.com
+docker login -u=yuefengkai  hub.tencentyun.com
 echo '*************登录成功*************'
 
 docker tag dotnetapitoredis hub.tencentyun.com/yuefengkai/dotnetapitoredis:latest
