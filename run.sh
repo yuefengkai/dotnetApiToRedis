@@ -13,4 +13,6 @@ echo '*************标记成功*************'
 docker push hub.tencentyun.com/yuefengkai/dotnetapitoredis:latest
 echo '*************推送成功*************'
 
+docker rmi $(docker images -f "dangling=true" -q) 
+
 echo '******************************************************************************'
