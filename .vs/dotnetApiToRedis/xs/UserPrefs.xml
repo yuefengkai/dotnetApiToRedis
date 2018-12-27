@@ -2,12 +2,12 @@
   <MonoDevelop.Ide.ItemProperties.dotnetApiToRedis PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workbench ActiveDocument="dotnetApiToRedis/Data/RedisDB.cs">
     <Files>
-      <File FileName="dotnetApiToRedis/Controllers/ChatMessageController.cs" Line="7" Column="27" />
+      <File FileName="dotnetApiToRedis/Controllers/ChatMessageController.cs" Line="51" Column="41" />
       <File FileName="dotnetApiToRedis/Startup.cs" Line="24" Column="52" />
       <File FileName="docker-compose.yml" Line="8" Column="46" />
       <File FileName="dotnetApiToRedis/appsettings.json" Line="1" Column="1" />
       <File FileName="dotnetApiToRedis/appsettings.Development.json" Line="1" Column="1" />
-      <File FileName="dotnetApiToRedis/Data/RedisDB.cs" Line="18" Column="42" />
+      <File FileName="dotnetApiToRedis/Data/RedisDB.cs" Line="67" Column="47" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />

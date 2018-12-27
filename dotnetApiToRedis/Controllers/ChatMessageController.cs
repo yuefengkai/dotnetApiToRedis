@@ -3,6 +3,7 @@ using System.Linq;
 using dotnetApiToRedis.Data;
 using dotnetApiToRedis.Models;
 using Microsoft.AspNetCore.Mvc;
+using Swashbuckle.AspNetCore.Annotations;
 
 namespace dotnetApiToRedis.Controllers
 {
@@ -16,9 +17,11 @@ namespace dotnetApiToRedis.Controllers
             _redisData = redisData;
         }
 
-        // GET api/values
-        [HttpGet]
-        [Route("all")]
+        /// <summary>
+        /// 获取所有信息
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet,Route("all"),SwaggerResponse(200,"成功返回list数据",typeof(List<ChatMessage>))]
         public ActionResult<IEnumerable<ChatMessage>> Get()
         {
             //return new List<ChatMessage>();
@@ -33,9 +36,11 @@ namespace dotnetApiToRedis.Controllers
         }
         
         
-        // GET api/values
-        [HttpPost]
-        [Route("add")]
+        /// <summary>
+        /// 添加信息
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet,Route("add"),SwaggerResponse(200,"成功返回添加数据",typeof(ChatMessage))]
         public IActionResult Add([FromBody] ChatMessage chatMessage)
         {
             chatMessage = _redisData.Add(chatMessage);
@@ -43,9 +48,12 @@ namespace dotnetApiToRedis.Controllers
             return new JsonResult(chatMessage);
         }
         
-        // GET api/values
-        [HttpPost]
-        [Route("update")]
+       /// <summary>
+       /// 更新数据
+       /// </summary>
+       /// <param name="chatMessage"></param>
+       /// <returns></returns>
+        [HttpGet,Route("update"),SwaggerResponse(200,"成功返回修改后数据",typeof(ChatMessage))]
         public IActionResult Update([FromBody] ChatMessage chatMessage)
         {
             chatMessage = _redisData.Update(chatMessage);
@@ -53,9 +61,12 @@ namespace dotnetApiToRedis.Controllers
             return new JsonResult(chatMessage);
         }
         
-        // GET api/values
-        [HttpGet]
-        [Route("delete")]
+        /// <summary>
+        /// 删除数据
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        [HttpGet,Route("delete"),SwaggerResponse(200,"成功返回修信息",typeof(string))]
         public IActionResult Delete(int id)
         {
             _redisData.Delete(id);
