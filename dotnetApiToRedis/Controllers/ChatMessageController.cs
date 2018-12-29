@@ -40,7 +40,7 @@ namespace dotnetApiToRedis.Controllers
         /// 添加信息
         /// </summary>
         /// <returns></returns>
-        [HttpGet,Route("add"),SwaggerResponse(200,"成功返回添加数据",typeof(ChatMessage))]
+        [HttpPost,Route("add"),SwaggerResponse(200,"成功返回添加数据",typeof(ChatMessage))]
         public IActionResult Add([FromBody] ChatMessage chatMessage)
         {
             chatMessage = _redisData.Add(chatMessage);
@@ -53,7 +53,7 @@ namespace dotnetApiToRedis.Controllers
        /// </summary>
        /// <param name="chatMessage"></param>
        /// <returns></returns>
-        [HttpGet,Route("update"),SwaggerResponse(200,"成功返回修改后数据",typeof(ChatMessage))]
+        [HttpPost,Route("update"),SwaggerResponse(200,"成功返回修改后数据",typeof(ChatMessage))]
         public IActionResult Update([FromBody] ChatMessage chatMessage)
         {
             chatMessage = _redisData.Update(chatMessage);
@@ -66,7 +66,7 @@ namespace dotnetApiToRedis.Controllers
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        [HttpGet,Route("delete"),SwaggerResponse(200,"成功返回修信息",typeof(string))]
+        [HttpPost,Route("delete"),SwaggerResponse(200,"成功返回修信息",typeof(string))]
         public IActionResult Delete(int id)
         {
             _redisData.Delete(id);

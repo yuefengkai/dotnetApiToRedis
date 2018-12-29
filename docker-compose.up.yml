@@ -1,0 +1,23 @@
+version: '3'
+
+services: 
+  dotnetapiredis:
+    image: 'hub.tencentyun.com/yuefengkai/dotnetapitoredis'
+    container_name: 'dotnetapiredis'
+    environment: #环境变量
+      - ASPNETCORE_ENVIRONMENT=Production
+      - FREEMAN_SITEID=888
+      - FREEMAN_TEMPLETID=999
+      - DOTNET_USE_POLLING_FILE_WATCHER=true #监视文件修改 DOTNET_USE_POLLING_FILE_WATCHER环境变量，如果设置为1或true，将改变文件观察者切换到轮询模式而，依靠在OS上，以通知关于文件的变化。使用轮询观察器时，性能损失小，内存增加。当从共享卷运行代码时，轮询文件观察器主要在Docker中使用。
+      - DOTNET_RUNNING_IN_CONTAINER=true #运行在容器
+    ports:
+      - '32770:80'
+  itchat:
+    image: 'hub.tencentyun.com/yuefengkai/itchatmsg'
+    container_name: 'itchatmsg'
+    depends_on:
+      - dotnetapiredis
+
+
+
+

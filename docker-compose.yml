@@ -6,3 +6,10 @@ services:
     build:
       context: .
       dockerfile: dotnetApiToRedis/Dockerfile
+  itchat:
+      image: ${DOCKER_REGISTRY}itchatmsg
+      build: 
+        context: ./itchat
+        dockerfile: Dockerfile
+      depends_on:
+        - dotnetapitoredis

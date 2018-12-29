@@ -1,0 +1,9 @@
+version: '3.4'
+
+services:
+  itchat-message:
+    image: itchat
+    build:
+      context: .
+      dockerfile: Dockerfile
+      
